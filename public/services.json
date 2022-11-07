@@ -1,0 +1,38 @@
+[
+    {
+        "id": "01",
+        "title": "Broken Display",
+        "image": "https://img.freepik.com/premium-photo/broken-glass-phone-screen-broken-phone-woman-s-hand-autumn-blurred-leaves-background_502065-1246.jpg?w=2000",
+        "description": "The cracks cause a visual obstruction, leading to the potential for eyestrain. Finger oils, dust, and debris will work their way into the cracks and further damage the screen and functionality. Broken glass or acrylic can have sharp edges which could put you at risk of slicing your fingers or hands."
+    },
+    {
+        "id": "02",
+        "title": "Battery Damage",
+        "image": "https://www.brokeassphone.com/wp-content/uploads/2017/06/dead-battery-1-1080x510.jpg",
+        "description": "Damaged, defective, and recalled batteries can become safety hazards if not handled properly. They can lead to fires, explosions, toxic contamination, and health dangers. If the damaged batteries are not shipped according to regulations, it can also result in heavy fines."
+    },
+    {
+        "id": "03",
+        "title": "Network Issue",
+        "image": "https://www.dotmagazine.online/_Resources/Persistent/e/5/3/4/e534150f5536695f82d7a72a3948fea8ce615cf1/iStock-1068597392%20copy-992x558-720x405.jpg",
+        "description": "Network issues are already irritating and frustrating to handle, but they can spell out disaster when they happen on a business network. While your IT department should be able to fix most network issues, you can save a lot of time by handling the issues yourself. Here are some of the most common network issues that people encounter along with their solutions"
+    },
+    {
+        "id": "04",
+        "title": "Data Recovery",
+        "image": "https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/03/26/665011-546261-540020-wifi-hotspots.jpg",
+        "description": "Data loss can be defined as inability to access data at its usual place by usual program means due to errors in software/hardware operation or due to user's improper actions."
+    },
+    {
+        "id": "05",
+        "title": "Country Unlock",
+        "image": "https://2.bp.blogspot.com/-xi-a39x5gLA/WR0nguq7W8I/AAAAAAAAvAQ/DPz_TLHAOJAGPi0Bs3ciYE499o2WcjvcQCLcB/s1600/SIM%2BNetwork%2BUnlock%2BPin%2BCodes%2Bfor%2Bany%2BCell%2BPhone.png",
+        "description": "Direct unlocking connections to all the manufacturers - get your unlock instantly. Unlock your phone for any sim card without affecting your warranty. All makes supported. All networks supported. Legal and safe. Warranty Unaffected. 100% Success Rate."
+    },
+    {
+        "id": "06",
+        "title": "Touch Repair",
+        "image": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2016/05/windows-10-touchscreen-fix.jpg",
+        "description": "A smartphone touchscreen can become unresponsive for several reasons. For example, a brief hiccup in your phone's system could render it unresponsive; a screen may also become unresponsive after incurring water damage. Other factors may include debris, app glitches and viruses."
+    }
+]
