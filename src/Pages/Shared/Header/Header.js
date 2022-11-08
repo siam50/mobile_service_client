@@ -3,7 +3,14 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(err => console.log(err))
+    };
+
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/services'>Services</Link></li>
@@ -30,7 +37,7 @@ const Header = () => {
                 <>
                     {
                         user?.email ?
-                            <Link to='/login' className="btn btn-primary">Logout</Link>
+                            <Link onClick={handleLogout} to='/login' className="btn btn-primary">Logout</Link>
                             :
                             <Link to='/login' className="btn btn-primary">Login</Link>
                     }
