@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -14,6 +14,15 @@ const Login = () => {
         // console.log(email, password)
 
         signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.log(err));
+    };
+
+    const handleGoogle = () => {
+        googleSignIn()
             .then(result => {
                 const user = result.user;
                 console.log(user);
@@ -42,6 +51,7 @@ const Login = () => {
                             <input className="btn btn-primary" type="submit" value="Login" />
                         </div>
                     </form>
+                    <button onClick={handleGoogle} className="btn btn-info">Google</button>
                     <p className='text-center'>Don'nt Have an Account? <Link to='/signup'><strong>Sign up</strong></Link></p>
                 </div>
             </div>
