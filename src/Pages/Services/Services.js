@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
-const HomeService = () => {
-    const [services, setServices] = useState([]);
-    const nmbr = 3;
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/services?nmbr=${nmbr}`)
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
-
+const Services = () => {
+    const services = useLoaderData();
     return (
         <div>
             <h3 className='text-3xl my-5'>Services{services.length}</h3>
@@ -29,12 +21,8 @@ const HomeService = () => {
                     </div>)
                 }
             </div>
-            <div className='grid justify-center my-5'>
-                <Link to='/services'><button className="btn btn-primary">See All</button></Link>
-            </div>
-
         </div>
     );
 };
 
-export default HomeService;
+export default Services;
