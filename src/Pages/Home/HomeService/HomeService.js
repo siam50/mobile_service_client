@@ -17,7 +17,7 @@ const HomeService = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6'>
                 {
                     services.map(service => <div className="card card-compact w-96 bg-base-100 shadow-xl">
-                        <figure><img src={service.image} alt="Shoes" /></figure>
+                        <figure> <img src={service.image} alt="Shoes" /> </figure>
                         <div className="card-body">
                             <h2 className="card-title">{service.title}</h2>
                             <p>{service.description.slice(0, 100)}... Read more</p>
