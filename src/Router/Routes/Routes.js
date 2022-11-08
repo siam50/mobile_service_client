@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import Details from "../../Pages/Details/Details";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import Review from "../../Pages/Review/Review";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
 
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <Details></Details>,
+                loader: ({ params }) => fetch(`https://mobile-service-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/review/:id',
+                element: <Review></Review>,
                 loader: ({ params }) => fetch(`https://mobile-service-server.vercel.app/services/${params.id}`)
             },
         ]
