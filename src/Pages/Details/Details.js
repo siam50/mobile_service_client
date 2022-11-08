@@ -19,8 +19,8 @@ const Details = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <Link to={`/review/${_id}`}><button>Add Review</button></Link>
+            <div className='grid justify-center'>
+                <Link to={`/review/${_id}`}><button className='btn btn-primary'>Add Review</button></Link>
             </div>
         </div>
     );

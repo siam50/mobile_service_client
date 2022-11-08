@@ -1,29 +1,29 @@
 import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Review = () => {
     const { title, _id } = useLoaderData();
     const { user } = useContext(AuthContext);
+    console.log(user)
 
     const handleReview = (event) => {
         event.preventDefault();
 
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
-        const phone = form.phone.value;
-        const email = user?.email || 'inregister';
+        const name = form.name.value;
+        const email = user?.email || 'unregister';
+        const img = user?.photoURL;
         const message = form.message.value;
 
         const review = {
             service: _id,
             serviceName: title,
             customer: name,
-            phone,
+            img,
             email,
             message
         }
-        console.log(review)
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -47,14 +47,22 @@ const Review = () => {
             <h3>{title}</h3>
             <form onSubmit={handleReview}>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                    <input name='firstName' type="text" placeholder="First name" className="input input-bordered w-full" />
-                    <input name='lastName' type="text" placeholder="Last name" className="input input-bordered w-full" />
-                    <input name='phone' type="text" placeholder="Phone" className="input input-bordered w-full" />
+                    <input name='firstName' type="text" placeholder="name" className="input input-bordered w-full" />
                     <input name='email' type="text" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered w-full" />
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Bio"></textarea>
                 <div className='grid justify-center'>
-                    <input className='btn btn-primary' type="submit" value="Submit" />
+                    <>
+                        {
+                            user?.email ?
+                                <input className='btn btn-primary' type="submit" value="Submit" />
+                                :
+                                <div className='flex justify-between'>
+                                    <p> Please <Link to='/login'><strong className='text-info'>login</strong></Link> to add a review</p>
+                                </div>
+
+                        }
+                    </>
                 </div>
             </form>
         </div>
