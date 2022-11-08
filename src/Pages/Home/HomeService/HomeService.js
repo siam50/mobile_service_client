@@ -6,7 +6,7 @@ const HomeService = () => {
     const nmbr = 3;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services?nmbr=${nmbr}`)
+        fetch(`https://mobile-service-server.vercel.app/services?nmbr=${nmbr}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
