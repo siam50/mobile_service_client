@@ -25,7 +25,7 @@ const Review = () => {
             message
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://mobile-service-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ const Review = () => {
             <h3>{title}</h3>
             <form onSubmit={handleReview}>
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                    <input name='firstName' type="text" placeholder="name" className="input input-bordered w-full" />
+                    <input name='name' type="text" placeholder="name" className="input input-bordered w-full" />
                     <input name='email' type="text" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered w-full" />
                 </div>
                 <textarea name='message' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Bio"></textarea>

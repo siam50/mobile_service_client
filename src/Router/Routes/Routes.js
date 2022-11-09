@@ -34,11 +34,6 @@ const router = createBrowserRouter([
                 element: <Details></Details>,
                 loader: ({ params }) => fetch(`https://mobile-service-server.vercel.app/services/${params.id}`)
             },
-            {
-                path: '/review/:id',
-                element: <Review></Review>,
-                loader: ({ params }) => fetch(`https://mobile-service-server.vercel.app/services/${params.id}`)
-            },
         ]
     },
 ])
