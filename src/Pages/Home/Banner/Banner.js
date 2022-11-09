@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold">Star Mobile Service</h1>
                     <p className="mb-5">Politeness goes far, yet costs nothing. Put customers first. Satisfied customers are our best ads. The customer is always right.</p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <Link to='/services'><button className="btn btn-primary">Get Started</button></Link>
                 </div>
             </div>
         </div>

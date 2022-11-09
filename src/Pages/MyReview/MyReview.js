@@ -50,8 +50,9 @@ const MyReview = () => {
                         </div>
                         <div className="p-4 space-y-2 text-sm">
                             <p>{review.message}</p>
-                            <div className='grid justify-end'>
-                                <button onClick={() => handleDelete(review._id)} className='btn btn-warning btn-xs'>delete</button>
+                            <div className=' flex justify-between'>
+                                <button className='btn btn-warning btn-xs'>edit review</button>
+                                <button onClick={() => handleDelete(review._id)} className='btn btn-error btn-xs'>delete</button>
                             </div>
                         </div>
                     </div>)
