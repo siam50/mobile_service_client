@@ -54,38 +54,34 @@ const Details = () => {
                     <h2 className="card-title">{title}</h2>
                     <p>{description}</p>
                     <p className='font-bold'>Price:${price}</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Learn now!</button>
-                    </div>
                 </div>
             </div>
             <div>
                 <h3 className='text-4xl font-semibold text-center'>Reviews</h3>
                 <ShowReview></ShowReview>
             </div>
-            <div className='w-full lg:w-2/3 my-5'>
-                <h3 className='text-2xl font-semibold my-4 text-center'>Add Your Review</h3>
-                <form onSubmit={handleReview}>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
-                        <input name='name' type="text" placeholder="name" className="input input-bordered w-full" required />
-                        <input name='email' type="text" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered w-full" />
-                    </div>
-                    <textarea name='message' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Review" required></textarea>
-                    <div className='grid justify-center'>
-                        <>
-                            {
-                                user?.email ?
+            <>
+                {
+                    user?.email ?
+                        <div className='w-full lg:w-2/3 my-5'>
+                            <h3 className='text-2xl font-semibold my-4 text-center'>Add Your Review</h3>
+                            <form onSubmit={handleReview}>
+                                <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+                                    <input name='name' type="text" placeholder="name" className="input input-bordered w-full" required />
+                                    <input name='email' type="text" placeholder="Email" defaultValue={user?.email} readOnly className="input input-bordered w-full" />
+                                </div>
+                                <textarea name='message' className="textarea textarea-bordered h-24 w-full my-3" placeholder="Review" required></textarea>
+                                <div className='grid justify-center'>
                                     <input className='btn btn-primary' type="submit" value="Submit" />
-                                    :
-                                    <div className='flex justify-between'>
-                                        <p> Please <Link to='/login'><strong className='text-info'>login</strong></Link> to add a review</p>
-                                    </div>
-
-                            }
-                        </>
-                    </div>
-                </form>
-            </div>
+                                </div>
+                            </form>
+                        </div>
+                        :
+                        <div className='flex justify-between my-6'>
+                            <p className='text-2xl font-bold'> Please <Link to='/login'><strong className='text-info'>login</strong></Link> to add a review</p>
+                        </div>
+                }
+            </>
         </div>
     );
 };

@@ -16,7 +16,7 @@ const Home = () => {
                         </h2>
                         <div className="space-x-2 text-center py-2 lg:py-0">
                             <span> Use code:</span>
-                            <span className="font-bold text-lg">MAMBA</span>
+                            <span className="font-bold text-lg">STAR</span>
                         </div>
                         <Link to='/services' rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block bg-gray-50 text-gray-900 border-gray-400">Get Service</Link>
                     </div>
