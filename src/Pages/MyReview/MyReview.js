@@ -9,7 +9,28 @@ const MyReview = () => {
         fetch(`https://mobile-service-server.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOwnReviews(data))
-    }, [user?.email, ownReviews])
+    }, [user?.email, ownReviews]);
+
+    const handleDelete = (id) => {
+        const agreed = window.confirm('Are you sure?')
+        if (agreed) {
+            fetch(`https://mobile-service-server.vercel.app/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.acknowledged) {
+                        alert('Delete Successfully')
+                    }
+                })
+        }
+
+    }
+
+    if (ownReviews.length <= 0) {
+        return <h3 className='text-4xl font-semibold text-center my-5'>No reviews were added</h3>
+    }
     return (
         <div>
             <h3 className='text-4xl font-semibold text-center my-5'>My All Reviews</h3>
@@ -29,6 +50,9 @@ const MyReview = () => {
                         </div>
                         <div className="p-4 space-y-2 text-sm">
                             <p>{review.message}</p>
+                            <div className='grid justify-end'>
+                                <button onClick={() => handleDelete(review._id)} className='btn btn-warning btn-xs'>delete</button>
+                            </div>
                         </div>
                     </div>)
                 }
