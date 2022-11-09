@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Services = () => {
     const services = useLoaderData();
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return <div className='grid justify-center'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
+        </div>
+    }
     return (
         <div>
             <h3 className='text-3xl my-5'>Services{services.length}</h3>

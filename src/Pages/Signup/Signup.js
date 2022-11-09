@@ -1,9 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, loading } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    if (loading) {
+        return <div className='grid justify-center'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
+        </div>
+    }
 
     const handleSignup = (event) => {
         event.preventDefault();
@@ -17,6 +24,8 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                navigate('/');
             })
             .catch(err => console.log(err))
 

@@ -61,7 +61,7 @@ const Details = () => {
             <div>
                 <ShowReview></ShowReview>
             </div>
-            <div>
+            <div className='w-full lg:w-2/3 my-5'>
                 <h3 className='text-4xl font-semibold my-4 text-center'>Add Your Review</h3>
                 <form onSubmit={handleReview}>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>

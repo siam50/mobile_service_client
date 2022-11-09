@@ -3,9 +3,11 @@ import Main from "../../Layout/Main";
 import Details from "../../Pages/Details/Details";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
+import MyReview from "../../Pages/MyReview/MyReview";
 import Review from "../../Pages/Review/Review";
 import Services from "../../Pages/Services/Services";
 import Signup from "../../Pages/Signup/Signup";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
                 path: '/services/:id',
                 element: <Details></Details>,
                 loader: ({ params }) => fetch(`https://mobile-service-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/myreview',
+                element: <MyReview></MyReview>,
             },
         ]
     },
