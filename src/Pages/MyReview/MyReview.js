@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const MyReview = () => {
     const { user } = useContext(AuthContext);
     const [ownReviews, setOwnReviews] = useState([]);
+    useTitle('MyReview');
 
     useEffect(() => {
         fetch(`https://mobile-service-server.vercel.app/reviews?email=${user?.email}`)
@@ -52,7 +54,7 @@ const MyReview = () => {
                             <p>{review.message}</p>
                             <div className=' flex justify-between'>
                                 <button className='btn btn-warning btn-xs'>edit review</button>
-                                <button onClick={() => handleDelete(review._id)} className='btn btn-error btn-xs'>delete</button>
+                                <button onClick={() => handleDelete(review._id)} className='btn btn-error btn-xs'>delete review</button>
                             </div>
                         </div>
                     </div>)

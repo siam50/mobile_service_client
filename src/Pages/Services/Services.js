@@ -3,10 +3,12 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../hooks/useTitle';
 
 const Services = () => {
     const services = useLoaderData();
     const { loading } = useContext(AuthContext);
+    useTitle('Services')
 
     if (loading) {
         return <div className='grid justify-center'>

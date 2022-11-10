@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Signup = () => {
     const { createUser, loading } = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Signup')
 
     if (loading) {
         return <div className='grid justify-center'>
