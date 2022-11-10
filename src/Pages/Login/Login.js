@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-    const { signIn, googleSignIn, loading } = useContext(AuthContext);
+    const { signIn, googleSignIn, loading, setLoading } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     useTitle('Login')
@@ -23,7 +23,6 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password)
 
         signIn(email, password)
             .then(result => {
@@ -32,7 +31,10 @@ const Login = () => {
                 form.reset();
                 navigate(from, { replace: true })
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err)
+                setLoading(false);
+            });
     };
 
     const handleGoogle = () => {
@@ -67,7 +69,7 @@ const Login = () => {
                         </div>
                     </form>
                     <button onClick={handleGoogle} className="btn btn-info">Google</button>
-                    <p className='text-center'>Don'nt Have an Account? <Link to='/signup'><strong>Sign up</strong></Link></p>
+                    <p className='text-center my-3'>Don'nt Have an Account? <Link to='/signup'><strong>Sign up</strong></Link></p>
                 </div>
             </div>
         </div>
